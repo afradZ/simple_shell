@@ -57,4 +57,24 @@ char *strchr(char *, char);
 char **strtow(char *, char *);
 char **strtow2(char *, char);
 
+/* memo_functions.c */
+char *_memset(char *, char, unsigned int);
+void ffree(char **);
+void *_realloc(void *, unsigned int, unsigned int);
+
+/* memo_functions2.c */
+int bfree(void **);
+
+/* utils.c */
+int interactive(info_t *);
+int is_delim(char, char *);
+int _isalpha(int);
+int _atoi(char *);
+
+/* errors.c */
+int _erratoi(char *);
+void print_error(info_t *, char *);
+int print_d(int, int);
+char *convert_number(long int, int, int);
+void remove_comments(char *);
 #endif
