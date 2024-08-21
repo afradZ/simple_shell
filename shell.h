@@ -195,4 +195,13 @@ int read_history(info_t *info);
 int build_history_list(info_t *info, char *buf, int linecount);
 int renumber_history(info_t *info);
 
+/* emulators.c */
+int _myexit(info_t *);
+int _mycd(info_t *);
+int _myhelp(info_t *);
+
+/* emulators2.c */
+int _myhistory(info_t *);
+int _myalias(info_t *);
+
 #endif
