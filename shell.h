@@ -113,8 +113,8 @@ typedef struct builtin
 /* str_functions.c */
 int _strlen(char *);
 int _strcmp(char *, char*);
-char *starts_with(const char *, conts char *);
-char *strcat(char *, char *);
+char *starts_with(const char *, const char *);
+char *_strcat(char *, char *);
 
 /*str_functions2.c */
 char *_strcpy(char *, char *);
@@ -125,7 +125,7 @@ int _putchar (char);
 /*str_functions3.c */
 char *_strncpy(char*, char *, int);
 char *_strncat(char *, char *, int);
-char *strchr(char *, char);
+char *_strchr(char *, char);
 
 /* str_functions.c */
 char **strtow(char *, char *);
@@ -153,7 +153,7 @@ char *convert_number(long int, int, int);
 void remove_comments(char *);
 
 /* list_utils.c  */
-list_t *add_node(list_t ** const char *, int);
+list_t *add_node(list_t **, const char *, int);
 list_t *add_node_end(list_t **, const char *, int);
 size_t print_list_str(const list_t *);
 int delete_node_at_index(list_t **, unsigned int);
@@ -169,7 +169,8 @@ ssize_t get_node_index(list_t *, list_t *);
 /* errors2.c */
 void _eputs(char *);
 int _eputchar(char);
-int _putsfd(char c, int fd);
+int _putfd(char c, int fd);
+int _putsfd(char *str, int fd);
 
 /* info.c */
 void clear_info(info_t *);

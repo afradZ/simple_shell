@@ -26,7 +26,7 @@ void _eputs(char *str)
  *
  * Return: 1 on success, -1 on error and errno is appropriately set
  */
-int_eputchar(char c)
+int _eputchar(char c)
 {
 	static int i;
 	static char buf[WRITE_BUF_SIZE];
@@ -59,6 +59,26 @@ int _putfd(char c, int fd)
 		i = 0;
 	}
 	if (c != BUF_FLUSH)
-		BUF[i++] = c;
+		buf[i++] = c;
 	return (1);
+}
+
+/**
+ *_putsfd - prints an input string
+ * @str: str to be printed
+ * @fd: filedescriptor to write to
+ *
+ * Return: the number of chars
+ */
+int _putsfd(char *str, int fd)
+{
+	int i = 0;
+
+	if (!str)
+		return (0);
+	while (*str)
+	{
+		i += _putfd(*str++, fd);
+	}
+	return (i);
 }

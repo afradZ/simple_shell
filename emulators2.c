@@ -20,7 +20,7 @@ int _myhistory(info_t *info)
 *
 * Return: 0 on success 1 on error
 */
-int unset_alias(indo_t *info, char *str)
+int unset_alias(info_t *info, char *str)
 {
 	char *p, c;
 	int ret;
@@ -66,7 +66,7 @@ int print_alias(list_t *node)
 {
 	char *p = NULL, *a = NULL;
 
-	if node(node)
+	if (node)
 	{
 		p = _strchr(node->str, '=');
 		for (a = node->str; a <= p; a++)

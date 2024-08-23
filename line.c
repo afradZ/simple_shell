@@ -11,7 +11,7 @@
 ssize_t input_buf(info_t *info, char **buf, size_t *len)
 {
 	ssize_t r = 0;
-	ssize_t len_p = 0;
+	size_t len_p = 0;
 
 	if (!*len)
 	{
@@ -31,7 +31,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 			}
 			info->linecount_flag = 1;
 			remove_comments(*buf);
-			build_history_list(info, *buf, info->hiscount++);
+			build_history_list(info, *buf, info->histcount++);
 			{
 				*len = r;
 				info->cmd_buf = buf;
@@ -164,5 +164,5 @@ void sigintHandler(__attribute__((unused))int sig_num)
 {
 	_puts("\n");
 	_puts("$");
-	_putchar(BUF - FLUSH);
+	_putchar(BUF_FLUSH);
 }
