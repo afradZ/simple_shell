@@ -81,7 +81,7 @@ int _mycd(info_t *info)
 /**
  * _myhelp - changes the current directory of the process
  * @info: struct containing potential args
- * 
+ *
  *  Return: Always 0
  */
 int _myhelp(info_t *info)

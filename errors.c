@@ -2,23 +2,23 @@
 
 /**
  * _erratoi - converts a string to an integer
- * @s: string to be converted
+ * @str: string to be converted
  *
  * Return: 0 if no numbers in string, converted num otherwise, -1 on error
  */
-int _erratoi(char *s)
+int _erratoi(char *str)
 {
 	int i = 0;
 	unsigned long int result = 0;
 
-	if (*s == '+')
-		s++; 
-	for (i = 0;  s[i] != '\0'; i++)
+	if (*str == '+')
+		str++;
+	for (i = 0;  str[i] != '\0'; i++)
 	{
-		if (s[i] >= '0' && s[i] <= '9')
+		if (str[i] >= '0' && str[i] <= '9')
 		{
 			result *= 10;
-			result += (s[i] - '0');
+			result += (str[i] - '0');
 			if (result > INT_MAX)
 				return (-1);
 		}

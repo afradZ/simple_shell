@@ -161,10 +161,10 @@ void free_list(list_t **);
 
  /* list_operations.c */
 size_t list_len(const list_t *);
-char ** list_to_strings(list_t *);
+char **list_to_strings(list_t *);
 size_t print_list(const list_t *);
 list_t *node_starts_with(list_t *, char *, char);
-ssize_t get_node_index(list_t *, list-t *);
+ssize_t get_node_index(list_t *, list_t *);
 
 /* errors2.c */
 void _eputs(char *);

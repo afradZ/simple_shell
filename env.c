@@ -17,7 +17,7 @@ int _myenv(info_t *info)
  * @info: struct containing potential args
  * @name: env variable name
  *
- * Retuen: the value
+ * Return: the value
  */
 char *_getenv(info_t *info, const char *name)
 {
@@ -67,7 +67,7 @@ int _myunsetenv(info_t *info)
 		_eputs("not enough args\n");
 		return (1);
 	}
-	for (i = 1 ; i<= info -> argc; i++)
+	for (i = 1 ; i <= info->argc; i++)
 		_unsetenv(info, info->argv[i]);
 	return (0);
 }
@@ -86,5 +86,5 @@ int populate_env_list(info_t *info)
 	for (i = 0; environ[i]; i++)
 		add_node_end(&node, environ[i], 0);
 	info->env = node;
-	return(0);
+	return (0);
 }

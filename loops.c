@@ -47,14 +47,13 @@ int hsh(info_t *info, char **av)
  * find_builtin - finds a builtin com
  * @info: param and return info struct
  *
- * Return -1 if not found, 0 if successful, 1 if found but not successful
+ * Return: -1 if not found, 0 if successful, 1 if found but not successful
  * -2 if builtin signals exit()
  */
 int find_builtin(info_t *info)
 {
 	int i, built_in_ret = -1;
-	builtin_table builtinbl[] =
-	{
+	builtin_table builtinbl[] = {
 		{"exit", _myexit},
 		{"env", _myenv},
 		{"help", _myhelp},
@@ -65,7 +64,7 @@ int find_builtin(info_t *info)
 		{"cd", _mycd},
 		{NULL, NULL}
 	};
-	
+
 	for (i = 0; builtinbl[i].type; i++)
 		if (_strcmp(info->argv[0], builtinbl[i].type) == 0)
 		{

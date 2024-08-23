@@ -2,13 +2,14 @@
 
 /**
  * _strlen -returns length of a string
- * @s: string to check 
+ * @s: string to check
  *
  * Return: int length of the string
  */
 int _strlen(char *s)
 {
 	int i = 0;
+
 	if (!s)
 		return (0);
 	while (*s++)
@@ -28,7 +29,7 @@ int _strcmp(char *s1, char *s2)
 	while (*s1 && *s2)
 	{
 		if (*s1 != *s2)
-			return (*s1 -*s2);
+			return (*s1 - *s2);
 		s1++;
 		s2++;
 	}
@@ -50,7 +51,7 @@ char *starts_with(const char *haystack, const chaar *needle)
 	while (*needle)
 		if (*needle++ != *haystack++)
 			return (NULL);
-	return((char *)haystack);
+	return ((char *)haystack);
 }
 
 /**
@@ -64,9 +65,10 @@ char *_strcat(char *dest, char *src)
 {
 	char *ret = dest;
 
-	while (*dest) dest++;
+	while (*dest)
+		dest++;
 	while (*src)
-		*dest++ = *src ++;
+		*dest++ = *src++;
 	*dest = *src;
 	return (ret);
 }
