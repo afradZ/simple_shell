@@ -120,7 +120,7 @@ char *_strcat(char *, char *);
 char *_strcpy(char *, char *);
 char *_strdup(const char *);
 void _puts(char *);
-int _putchar (char);
+int _putchar(char);
 
 /*str_functions3.c */
 char *_strncpy(char*, char *, int);
@@ -227,5 +227,8 @@ int hsh(info_t *, char **);
 int find_builtin(info_t *);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
+
+/* loophsh.c */
+int loophsh(char **);
 
 #endif

@@ -4,7 +4,7 @@
  * input_buf - buffers chained comms
  * @info: param struct
  * @buf: adress of buffer
- * @len: adress of le var
+ * @len: adress of len var
  *
  * Return: bytes read
  */
@@ -163,6 +163,6 @@ int _getline(info_t *info, char **ptr, size_t *length)
 void sigintHandler(__attribute__((unused))int sig_num)
 {
 	_puts("\n");
-	_puts("$");
+	_puts("$ ");
 	_putchar(BUF_FLUSH);
 }

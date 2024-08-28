@@ -38,6 +38,7 @@ int write_history(info_t *info)
 
 	if (!filename)
 		return (-1);
+
 	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0644);
 	free(filename);
 	if (fd == -1)
