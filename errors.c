@@ -2,23 +2,22 @@
 
 /**
  * _erratoi - converts a string to an integer
- * @str: string to be converted
- *
- * Return: 0 if no numbers in string, converted num otherwise, -1 on error
+ * @s: the string to be converted
+ * Return: 0 if no nums in string, converted num otherwise, -1 on error
  */
-int _erratoi(char *str)
+int _erratoi(char *s)
 {
 	int i = 0;
 	unsigned long int result = 0;
 
-	if (*str == '+')
-		str++;
-	for (i = 0;  str[i] != '\0'; i++)
+	if (*s == '+')
+		s++;
+	for (i = 0;  s[i] != '\0'; i++)
 	{
-		if (str[i] >= '0' && str[i] <= '9')
+		if (s[i] >= '0' && s[i] <= '9')
 		{
 			result *= 10;
-			result += (str[i] - '0');
+			result += (s[i] - '0');
 			if (result > INT_MAX)
 				return (-1);
 		}
@@ -123,7 +122,7 @@ char *convert_number(long int num, int base, int flags)
 
 /**
  * remove_comments - function replaces first instance of '#' with '\0'
- * @buf: address of the string to be modified
+ * @buf: address of the string to modify
  *
  * Return: Always 0;
  */

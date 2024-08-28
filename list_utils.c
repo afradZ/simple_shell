@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * add_node - adds a node to the beginning of a list
- * @head: adress of the pointer to the head node
- * @str: str field of the node
+ * add_node - adds a node to the beginning of the list
+ * @head: address of the pointer to head node
+ * @str: str field of node
  * @num: int to be assigned to the new node
  *
  * Return: size of list
@@ -13,7 +13,6 @@ list_t *add_node(list_t **head, const char *str, int num)
 	list_t *new_head;
 
 	if (!head)
-
 		return (NULL);
 	new_head = malloc(sizeof(list_t));
 	if (!new_head)
@@ -35,10 +34,10 @@ list_t *add_node(list_t **head, const char *str, int num)
 }
 
 /**
- * add_node_end - adds a node to the end of a list
- * @head: adress of the pointer to the head node
- * @str: str field of the node
- * @num : int to be assigned to the new node
+ * add_node_end - adds a node to the end of the list
+ * @head: address of pointer to head node
+ * @str: str field of node
+ * @num: int to be assigned to the new node
  *
  * Return: size of the list
  */
@@ -77,7 +76,7 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 
 /**
  * print_list_str - prints the str element of a list_t linked list
- * @h: pointer to the first node
+ * @h: pointer to first node
  *
  * Return: size of the list
  */
@@ -96,9 +95,9 @@ size_t print_list_str(const list_t *h)
 }
 
 /**
- * delete_node_at_index - deletes node at a given index
- * @head: address of the pointer to first node
- * @index: index of the node to delete
+ * delete_node_at_index - deletes node at given index
+ * @head: address of pointer to first node
+ * @index: index of node to delete
  *
  * Return: 1 on success, 0 on failure
  */
@@ -137,7 +136,7 @@ int delete_node_at_index(list_t **head, unsigned int index)
 
 /**
  * free_list - frees all nodes of a list
- * @head_ptr: address of the pointer to the head node
+ * @head_ptr: address of pointer to head node
  *
  * Return: void
  */

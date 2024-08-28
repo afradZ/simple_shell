@@ -3,7 +3,7 @@
 /**
  * _myhistory - displays the history list, one command by line, preceded
  *              with line numbers, starting at 0.
- * @info: struct containing potential args
+ * @info: structure containing potential args
  *
  *  Return: Always 0
  */
@@ -14,12 +14,12 @@ int _myhistory(info_t *info)
 }
 
 /**
-* unset_alias - sets alias to str
-* @info: param struct
-* @str: str alias
-*
-* Return: 0 on success 1 on error
-*/
+ * unset_alias - sets alias to string
+ * @info: param struct
+ * @str: the str alias
+ *
+ * Return: Always 0 on success, 1 on error
+ */
 int unset_alias(info_t *info, char *str)
 {
 	char *p, c;
@@ -37,11 +37,11 @@ int unset_alias(info_t *info, char *str)
 }
 
 /**
- * set_alias - sets alias to str
+ * set_alias - sets alias to string
  * @info: param struct
- * @str: str alias
+ * @str: the str alias
  *
- * Return: 0 on success, 1 on error
+ * Return: Always 0 on success, 1 on error
  */
 int set_alias(info_t *info, char *str)
 {
@@ -81,10 +81,10 @@ int print_alias(list_t *node)
 }
 
 /**
- * _myalias - mimics the alias built in man alias
+ * _myalias - mimics the alias builtin (man alias)
  * @info: struct containing potential args
  *
- * Return: Always 0
+ *  Return: Always 0
  */
 int _myalias(info_t *info)
 {

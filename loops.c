@@ -3,7 +3,7 @@
 /**
  * hsh - main shell loop
  * @info: param & return info struct
- * @av: arg vector from main
+ * @av: arg vector from main()
  *
  * Return: 0 on success, 1 on error, or error code
  */
@@ -44,11 +44,13 @@ int hsh(info_t *info, char **av)
 }
 
 /**
- * find_builtin - finds a builtin com
- * @info: param and return info struct
+ * find_builtin - finds a builtin comd
+ * @info: the parameter & return info struct
  *
- * Return: -1 if not found, 0 if successful, 1 if found but not successful
- * -2 if builtin signals exit()
+ * Return: -1 if builtin not found,
+ *			0 if builtin executed successfully,
+ *			1 if builtin found but not successful,
+ *			-2 if builtin signals exit()
  */
 int find_builtin(info_t *info)
 {
@@ -60,8 +62,8 @@ int find_builtin(info_t *info)
 		{"history", _myhistory},
 		{"setenv", _mysetenv},
 		{"unsetenv", _myunsetenv},
-		{"alias", _myalias},
 		{"cd", _mycd},
+		{"alias", _myalias},
 		{NULL, NULL}
 	};
 
@@ -77,7 +79,7 @@ int find_builtin(info_t *info)
 
 /**
  * find_cmd - finds a command in PATH
- * @info: param and return info struct
+ * @info: param & return info struct
  *
  * Return: void
  */
@@ -118,8 +120,8 @@ void find_cmd(info_t *info)
 }
 
 /**
- * fork_cmd - forks an exec thread to run cmd
- * @info: param and return info struct
+ * fork_cmd - forks a an exec thread to run cmd
+ * @info: param & return info struct
  *
  * Return: void
  */
@@ -130,7 +132,7 @@ void fork_cmd(info_t *info)
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-		perror("error:");
+		perror("Error:");
 		return;
 	}
 	if (child_pid == 0)
@@ -142,6 +144,7 @@ void fork_cmd(info_t *info)
 				exit(126);
 			exit(1);
 		}
+
 	}
 	else
 	{
@@ -150,7 +153,7 @@ void fork_cmd(info_t *info)
 		{
 			info->status = WEXITSTATUS(info->status);
 			if (info->status == 126)
-				print_error(info, "permission denied\n");
+				print_error(info, "Permission denied\n");
 		}
 	}
 }

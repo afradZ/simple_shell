@@ -2,9 +2,9 @@
 
 /**
  * _myexit - exits the shell
- * @info: struct containing potential args
+ * @info: Struct containing potential args
  *
- * Return: exits with an exit status (0) if info.argv[0] != "exit"
+ *  Return: exits with an exit status (0) if info.argv[0] != "exit"
  */
 int _myexit(info_t *info)
 {
@@ -16,7 +16,7 @@ int _myexit(info_t *info)
 		if (exitcheck == -1)
 		{
 			info->status = 2;
-			print_error(info, "unvalid number: ");
+			print_error(info, "Illegal number: ");
 			_eputs(info->argv[1]);
 			_eputchar('\n');
 			return (1);
@@ -89,7 +89,7 @@ int _myhelp(info_t *info)
 	char **arg_array;
 
 	arg_array = info->argv;
-	_puts("function not yet implemented \n");
+	_puts("help call works. Function not yet implemented \n");
 	if (0)
 		_puts(*arg_array);
 	return (0);

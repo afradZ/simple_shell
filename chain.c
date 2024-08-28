@@ -70,7 +70,7 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 }
 
 /**
- * replace_alias - replaces an alias in the tokenized string
+ * replace_alias - replaces an aliases in the tokenized string
  * @info: param struct
  *
  * Return: 1 if replaced, 0 otherwise

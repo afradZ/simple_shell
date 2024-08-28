@@ -3,7 +3,7 @@
 /**
  **_memset - fills memory with a constant byte
  *@s: pointer to the memory area
- *@b: byte to fill *s with
+ *@b:  byte to fill *s with
  *@n: amount of bytes to be filled
  *Return: pointer to the memory area s
  */
@@ -37,7 +37,7 @@ void ffree(char **pp)
  * @old_size: byte size of previous block
  * @new_size: byte size of new block
  *
- * Return: pointer to the old block.
+ * Return: pointer to the old block
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
